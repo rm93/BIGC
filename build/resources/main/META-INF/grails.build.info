@@ -1,0 +1,6 @@
+#Mon, 18 Dec 2017 16:14:39 +0100
+
+info.app.version=0.1
+info.app.name=BIGC
+grails.env=development
+info.app.grailsVersion=3.3.1
