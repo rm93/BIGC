@@ -61,23 +61,29 @@
     <h3><strong>${controllerName}</strong></h3>
     <br>
     <g:form action="upload" method="post" useToken="true" enctype="multipart/form-data">
-        <table style="width: 800px">
-            <tr>
-                <td colspan="2"><label for="projectName">Name project</label><g:textField name="projectName" required="required" maxlength="100" minlength="5"></g:textField></td>
-            </tr>
-            <tr>
-                <td><label for="private">Project private</label><g:select name="private" from="['True', 'False']" value="False"></g:select></td>
-                <td><label for="amplicon">Chose amplicon</label><g:select name="amplicon" from="${rivm.db.Amplicon.all.amplicon}" noSelection="${['null':'Select..']}" value="63"></g:select></td>
-                <g:select name="amplicon" from="${rivm.db.Amplicon.getAll()}" value="63" optionKey="id" optionValue="amplicon"></g:select>
-            </tr>
-            <tr>
-                <td><label for="fileUpload">Drag & drop to upload or click on browse to upload</label></td>
-                <td><input type="file" name="fileUpload"/></td>
-            </tr>
-            <tr>
-                <input type="hidden" name="usr" value="<sec:username/>"><td colspan="2"><g:submitButton name="upload" value="Run pipeline"></g:submitButton></td>
-            </tr>
-        </table>
+        %{--<table style="width: 800px">--}%
+            %{--<tr>--}%
+                %{--<td colspan="2"><label for="projectName">Name project</label><g:textField name="projectName" required="required" maxlength="100" minlength="5"></g:textField></td>--}%
+            %{--</tr>--}%
+            %{--<tr>--}%
+                %{--<td><label for="private">Project private</label><g:select name="private" from="['True', 'False']" value="False"></g:select></td>--}%
+                %{--<td><label for="amplicon">Chose amplicon</label><g:select name="amplicon" from="${rivm.db.Amplicon.all.amplicon}" noSelection="${['null':'Select..']}" value="63"></g:select></td>--}%
+                %{--<g:select name="amplicon" from="${rivm.db.Amplicon.getAll()}" value="63" optionKey="id" optionValue="amplicon"></g:select>--}%
+            %{--</tr>--}%
+            %{--<tr>--}%
+                %{--<td><label for="fileUpload">Drag & drop to upload or click on browse to upload</label></td>--}%
+                %{--<td><input type="file" name="fileUpload"/></td>--}%
+            %{--</tr>--}%
+            %{--<tr>--}%
+                %{--<input type="hidden" name="usr" value="<sec:username/>"><td colspan="2"><g:submitButton name="upload" value="Run pipeline"></g:submitButton></td>--}%
+            %{--</tr>--}%
+        %{--</table>--}%
+
+        <span class="button">
+            <input type="file" name="fileUpload"/>
+            <input type="submit" class="upload" value="upload"/>
+
+        </span>
     </g:form>
 
     <table>
