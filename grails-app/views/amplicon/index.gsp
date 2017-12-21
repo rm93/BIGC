@@ -5,8 +5,6 @@
 <title>Amplicon pipeline</title>
 
 <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
-<asset:javascript src="uploadr.manifest.js"/>
-<asset:stylesheet href="uploadr.manifest.css"/>
 %{--Style code for the tabs--}%
 <style>
     /* Style the tab */
@@ -50,92 +48,99 @@
 <body>
 %{--Tab names--}%
 <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'pipeline')" id="defaultOpen">Pipeline</button>
-    <button class="tablinks" onclick="openTab(event, 'hist')">View history</button>
+    <button class="tablinks" onclick="openTab(event, 'hist')" id="defaultOpen">History</button>
+    <button class="tablinks" onclick="openTab(event, 'pipeline')">New project</button>
+    <button class="tablinks" onclick="openTab(event, 'faq')">FAQ</button>
 </div>
 %{--end--}%
 
-%{--First tab with the pipeline input fields--}%
-<div id="pipeline" class="tabcontent">
-    %{--Name of controller--}%
-    <h3><strong>${controllerName}</strong></h3>
-    <br>
-    <g:form action="upload" method="post" useToken="true" enctype="multipart/form-data">
-        %{--<table style="width: 800px">--}%
-            %{--<tr>--}%
-                %{--<td colspan="2"><label for="projectName">Name project</label><g:textField name="projectName" required="required" maxlength="100" minlength="5"></g:textField></td>--}%
-            %{--</tr>--}%
-            %{--<tr>--}%
-                %{--<td><label for="private">Project private</label><g:select name="private" from="['True', 'False']" value="False"></g:select></td>--}%
-                %{--<td><label for="amplicon">Chose amplicon</label><g:select name="amplicon" from="${rivm.db.Amplicon.all.amplicon}" noSelection="${['null':'Select..']}" value="63"></g:select></td>--}%
-                %{--<g:select name="amplicon" from="${rivm.db.Amplicon.getAll()}" value="63" optionKey="id" optionValue="amplicon"></g:select>--}%
-            %{--</tr>--}%
-            %{--<tr>--}%
-                %{--<td><label for="fileUpload">Drag & drop to upload or click on browse to upload</label></td>--}%
-                %{--<td><input type="file" name="fileUpload"/></td>--}%
-            %{--</tr>--}%
-            %{--<tr>--}%
-                %{--<input type="hidden" name="usr" value="<sec:username/>"><td colspan="2"><g:submitButton name="upload" value="Run pipeline"></g:submitButton></td>--}%
-            %{--</tr>--}%
-        %{--</table>--}%
-
-        <span class="button">
-            <input type="file" name="fileUpload"/>
-            <input type="submit" class="upload" value="upload"/>
-
-        </span>
-    </g:form>
-
-    <table>
-        <tr>
-            <td>Name project</td>
-            <td><g:textField name="projectName" required="required" maxlength="100" minlength="5"></g:textField></td>
-        </tr>
-        <tr>
-            <td>Project private</td>
-            <td>False <input type="radio" name="pri" value="False" checked> True <input type="radio" name="pri" value="True"></td>
-        </tr>
-        <tr>
-            <td>Chose amplicon</td>
-            <td><g:select name="amplicon" from="${rivm.db.Amplicon.getAll()}" value="63" optionKey="id" optionValue="amplicon"></g:select></td>
-        </tr>
-        <tr>
-            <td>Upload fastq files as zip</td>
-            <td><input type="file" name="fileUpload" multiple/></td>
-        </tr>
-    </table>
-</div>
-
-%{--Second tab with the pipeline history table--}%
+%{--First tab with the pipeline history table--}%
 <div id="hist" class="tabcontent">
     <h3><strong>${controllerName}</strong></h3>
     <br>
     <div class="body">
         <table>
-            <tr>
+            <thead>
                 <th>Name project</th>
                 <th>User</th>
                 <th>Short Name</th>
                 <th>Start date</th>
                 <th>End date</th>
                 <th>Status</th>
-            </tr>
-        <g:each var="i" in="${rivm.db.Amplicon_project.getAll()}">
-            ${i.id}
-            <tr>
-                <td><a href="${createLink(uri:'#')}">${i.name}</a></td>
-                <td>${i.usr}</td>
-                <td>${rivm.db.Partner.getAll().short_name[0]} [hardcoded]</td>
-                <td>${i.start_date}</td>
-                <td>${i.end_date}</td>
-                <td>${i.status}</td>
-            </tr>
-        </g:each>
+            </thead>
+            <g:each var="i" in="${rivm.db.Amplicon_project.getAll()}">
+                <tr>
+                    <td><a href="${createLink(uri:'#')}">${i.name}</a></td>
+                    <td>${rivm.auth.User.findById(i.userId).username}</td>
+                    <td>${rivm.db.Partner.findById(rivm.auth.User.findById(i.userId).partnerId).short_name}</td>
+                    <td>${i.start_date}</td>
+                    <td>${i.end_date}</td>
+                    <td>${i.status}</td>
+                </tr>
+            </g:each>
         </table>
     </div>
 </div>
 
-    %{--Start tab script code--}%
+%{--Second tab with the pipeline input fields--}%
+<div id="pipeline" class="tabcontent">
+    %{--Name of controller--}%
+    <h3><strong>${controllerName}</strong></h3>
+    <br>
+    <g:form action="upload" method="post" useToken="true" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td>Name project</td>
+                <td><g:textField name="projectName" required="required" maxlength="100" minlength="5"></g:textField></td>
+            </tr>
+            <tr>
+                <td>Project private</td>
+                <td>False <input type="radio" name="pri" value="False" checked> True <input type="radio" name="pri" value="True"></td>
+            </tr>
+            <tr>
+                <td>Chose amplicon</td>
+                <td><g:select name="amplicon" from="${rivm.db.Amplicon.getAll()}" value="3" optionKey="id" optionValue="amplicon"></g:select></td>
+            </tr>
+            <tr>
+                <td>Upload fastq files as zip</td>
+                <td><input type="file" name="fileUpload" accept=".zip"/></td>
+            </tr>
+        </table>
+        <g:submitButton name="upload" value="Run pipeline"></g:submitButton>
+    </g:form>
+</div>
+
+%{--Third tab with FAQ--}%
+<div id="faq" class="tabcontent">
+    <h3><strong>${controllerName}</strong></h3>
+    <br>
+    <div class="body">
+        <table>
+            <thead>
+                <th>Question</th>
+                <th>Answer</th>
+            </thead>
+            <tr>
+                <td>Name project</td>
+                <td>Answer</td>
+            </tr>
+            <tr>
+                <td>Project private</td>
+                <td>Answer</td>
+            </tr>
+            <tr>
+                <td>Chose amplicon</td>
+                <td>Answer</td>
+            </tr>
+            <tr>
+                <td>Upload</td>
+                <td>Answer</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+%{--Start tab script code--}%
 <script>
     function openTab(evt, name) {
         var i, tabcontent, tablinks;
@@ -154,6 +159,6 @@
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
 </script>
-    %{--End tab script code--}%
+%{--End tab script code--}%
 </body>
 </html>

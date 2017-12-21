@@ -5,7 +5,6 @@ import rivm.auth.User
 class Amplicon_project {
 
     String name
-    String usr
     Boolean privat
     Date start_date
     Date end_date

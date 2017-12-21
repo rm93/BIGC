@@ -4,14 +4,11 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'rivm.auth.User
 grails.plugin.springsecurity.authority.className = 'rivm.auth.Role'
 grails.plugin.springsecurity.logout.postOnly = false //allows logout to work
 grails.gorm.failOnError = true
-//    Convert from MB to bytes: MB * 1024 * 1024 = bytes
-grails.controllers.upload.maxFileSize=2097152
-grails.controllers.upload.maxRequestSize=2097152
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	[pattern: '/',               access: ['permitAll']],
-	[pattern: '/index',          access: ['permitAll']],
-	[pattern: '/index.gsp',      access: ['permitAll']],
-	[pattern: '/amplicon/**',      access: ['permitAll']],
+	[pattern: '/',               access: ['ROLE_ADMIN']],
+	[pattern: '/index',          access: ['ROLE_ADMIN']],
+	[pattern: '/index.gsp',      access: ['ROLE_ADMIN']],
+	[pattern: '/amplicon/**',      access: ['ROLE_ADMIN']],
 	[pattern: '/error',          access: ['permitAll']],
 	[pattern: '/shutdown',       access: ['permitAll']],
 	[pattern: '/assets/**',      access: ['permitAll']],
@@ -19,11 +16,11 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/**/css/**',      access: ['permitAll']],
 	[pattern: '/**/images/**',   access: ['permitAll']],
 	[pattern: '/**/favicon.ico', access: ['permitAll']],
-	[pattern: '/dbconsole/**',   access: ['permitAll']],
-	[pattern: '/user/**',     access: ['permitAll']],
-	[pattern: '/role/**',     access: ['permitAll']],
-	[pattern: '/securityInfo/**',     access: ['permitAll']],
-	[pattern: '/registrationCode/**',     access: ['permitAll']]
+	[pattern: '/dbconsole/**',   access: ['ROLE_ADMIN']],
+	[pattern: '/user/**',     access: ['ROLE_ADMIN']],
+	[pattern: '/role/**',     access: ['ROLE_ADMIN']],
+	[pattern: '/securityInfo/**',     access: ['ROLE_ADMIN']],
+	[pattern: '/registrationCode/**',     access: ['ROLE_ADMIN']]
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [

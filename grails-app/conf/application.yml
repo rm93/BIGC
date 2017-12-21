@@ -67,6 +67,11 @@ grails:
         cache:
             maxsize: 1000
     controllers:
+        upload:
+#        Change upload size from 128 KB to 1000MB to accept the large sequence files.
+#        Convert from MB to bytes: MB * 1024 * 1024 = bytes
+            maxFileSize: 1048576000
+            maxRequestSize: 1048576000
         defaultScope: singleton
     converters:
         encoding: UTF-8
@@ -104,7 +109,7 @@ environments:
     development:
         dataSource:
             dbCreate: update
-            url: jdbc:postgresql://localhost:5432/testdb4
+            url: jdbc:postgresql://localhost:5432/testdb5
     test:
         dataSource:
             dbCreate: update
