@@ -49,6 +49,7 @@
 			<thead>
 			<tr>
 				<s2ui:sortableColumn property='username' titleDefault='Username'/>
+				<s2ui:sortableColumn property="partner" titleDefault="Partner"/>
 				<s2ui:sortableColumn property='enabled' titleDefault='Enabled'/>
 				<s2ui:sortableColumn property='accountExpired' titleDefault='Account Expired'/>
 				<s2ui:sortableColumn property='accountLocked' titleDefault='Account Locked'/>
@@ -59,6 +60,7 @@
 			<g:each in='${results}' status='i' var='user'>
 				<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 					<td><g:link action='edit' id='${user.id}'>${uiPropertiesStrategy.getProperty(user, 'username')}</g:link></td>
+					<td>${rivm.db.Partner.findById(rivm.auth.Appuser.findById(user.id).partnerId).short_name}</td>
 					<td><s2ui:formatBoolean bean='${user}' name='enabled'/></td>
 					<td><s2ui:formatBoolean bean='${user}' name='accountExpired'/></td>
 					<td><s2ui:formatBoolean bean='${user}' name='accountLocked'/></td>

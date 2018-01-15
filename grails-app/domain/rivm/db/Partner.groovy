@@ -1,6 +1,6 @@
 package rivm.db
 
-import rivm.auth.User
+import rivm.auth.Appuser
 
 class Partner implements Serializable{
 
@@ -9,7 +9,7 @@ class Partner implements Serializable{
     String country
 
 //    Set relation with user
-    static hasMany = [user: User]
+    static hasMany = [user: Appuser]
 
     static constraints = {
         name nullable: false, blank: false, unique: true

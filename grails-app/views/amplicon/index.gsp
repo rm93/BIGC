@@ -69,14 +69,29 @@
                 <th>Status</th>
             </thead>
             <g:each var="i" in="${rivm.db.Amplicon_project.getAll()}">
-                <tr>
-                    <td><a href="${createLink(uri:'#')}">${i.name}</a></td>
-                    <td>${rivm.auth.User.findById(i.userId).username}</td>
-                    <td>${rivm.db.Partner.findById(rivm.auth.User.findById(i.userId).partnerId).short_name}</td>
-                    <td>${i.start_date}</td>
-                    <td>${i.end_date}</td>
-                    <td>${i.status}</td>
-                </tr>
+                <g:if test="${i.privat == true}">
+                    <g:if test="${i.userId.toString().equals(sec.loggedInUserInfo(field:"id").toString())}">
+                        <tr>
+                            <td><a href="/home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${i.id}/output/">${i.name}</a></td>
+                            <td>${rivm.auth.Appuser.findById(i.userId).username}</td>
+                            <td>${rivm.db.Partner.findById(rivm.auth.Appuser.findById(i.userId).partnerId).short_name}</td>
+                            <td>${i.start_date}</td>
+                            <td>${i.end_date}</td>
+                            <td>${i.status}</td>
+                        </tr>
+                    </g:if>
+                </g:if>
+
+                <g:else test="${i.privat == false}">
+                    <tr>
+                        <td><a href="/home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${i.id}/output/">${i.name}</a></td>
+                        <td>${rivm.auth.Appuser.findById(i.userId).username}</td>
+                        <td>${rivm.db.Partner.findById(rivm.auth.Appuser.findById(i.userId).partnerId).short_name}</td>
+                        <td>${i.start_date}</td>
+                        <td>${i.end_date}</td>
+                        <td>${i.status}</td>
+                    </tr>
+                </g:else>
             </g:each>
         </table>
     </div>

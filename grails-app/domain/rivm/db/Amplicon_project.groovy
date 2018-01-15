@@ -1,6 +1,6 @@
 package rivm.db
 
-import rivm.auth.User
+import rivm.auth.Appuser
 
 class Amplicon_project {
 
@@ -12,11 +12,10 @@ class Amplicon_project {
     Integer pipeline_version
 
 //    Set relations with amplicon and user
-    static belongsTo = [amplicon: Amplicon, user: User]
+    static belongsTo = [amplicon: Amplicon, user: Appuser]
 
     static constraints = {
         name nullable: false, blank: false
-        usr nullable: false, blank: false
         privat nullable: false, blank: false
         start_date nullable: false, blank: false
         status nullable: false, blank: false

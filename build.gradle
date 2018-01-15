@@ -26,13 +26,9 @@ repositories {
 }
 
 dependencies {
-//    Plugins needed to make the web interface work
-//    Spring security core + UI
     compile 'org.grails.plugins:spring-security-core:3.2.0'
     compile 'org.grails.plugins:spring-security-ui:3.1.1'
-//    PostgreSQL (database)
     compile 'org.postgresql:postgresql:42.1.4.jre7'
-//    End of extra plugins
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"

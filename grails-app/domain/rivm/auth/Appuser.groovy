@@ -1,15 +1,15 @@
 package rivm.auth
 
-import grails.compiler.GrailsCompileStatic
-import groovy.transform.EqualsAndHashCode
-import groovy.transform.ToString
 import rivm.db.Amplicon_project
 import rivm.db.Partner
+import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
+import grails.compiler.GrailsCompileStatic
 
 @GrailsCompileStatic
 @EqualsAndHashCode(includes='username')
 @ToString(includes='username', includeNames=true, includePackage=false)
-class User implements Serializable {
+class Appuser implements Serializable {
 
     private static final long serialVersionUID = 1
 
@@ -20,23 +20,20 @@ class User implements Serializable {
     boolean accountLocked
     boolean passwordExpired
 
-//    Set relations
     static belongsTo = [partner: Partner]
     static hasMany = [project: Amplicon_project]
 
     Set<Role> getAuthorities() {
-        (UserRole.findAllByUser(this) as List<UserRole>)*.role as Set<Role>
+        (AppuserRole.findAllByAppuser(this) as List<AppuserRole>)*.role as Set<Role>
     }
 
     static constraints = {
         password nullable: false, blank: false, password: true
         username nullable: false, blank: false, unique: true
-//        Set partner to nullable
         partner nullable: true
     }
 
     static mapping = {
-        table '`appuser`' //user is properity for postgresql insted i use now User as table name
-	    password column: '`password`'
+        password column: '`password`'
     }
 }

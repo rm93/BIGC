@@ -68,8 +68,8 @@ grails:
             maxsize: 1000
     controllers:
         upload:
-#        Change upload size from 128 KB to 1000MB to accept the large sequence files.
-#        Convert from MB to bytes: MB * 1024 * 1024 = bytes
+#            Change upload size from 128 KB to 1000MB to accept the large sequence files.
+#            Convert from MB to bytes: MB * 1024 * 1024 = bytes
             maxFileSize: 1048576000
             maxRequestSize: 1048576000
         defaultScope: singleton
@@ -99,8 +99,6 @@ hibernate:
 dataSource:
     pooled: true
     jmxExport: true
-
-    #PostgreSQL driver and password
     driverClassName: org.postgresql.Driver
     username: postgres
     password: password
@@ -109,7 +107,7 @@ environments:
     development:
         dataSource:
             dbCreate: update
-            url: jdbc:postgresql://localhost:5432/testdb5
+            url: jdbc:postgresql://localhost:5432/testdb8
     test:
         dataSource:
             dbCreate: update

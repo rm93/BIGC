@@ -10,11 +10,9 @@
 		<s2ui:tab name='userinfo' height='280'>
 			<table>
 				<tbody>
-				%{--Uitzoeken hoe partner aan user gekopeld kan worden--}%
-				<g:select name="partner" from="${rivm.db.Partner.all.name}" noSelection="${['null':'Select partner..']}"></g:select>
-				%{--Einde dropdown optie--}%
 				<s2ui:textFieldRow name='username' labelCodeDefault='Username'/>
 				<s2ui:passwordFieldRow name='password' labelCodeDefault='Password'/>
+				<s2ui:selectRow name="partner" from="${rivm.db.Partner.getAll()}" value="1" optionKey="id" optionValue="short_name" labelCodeDefault="Partner"></s2ui:selectRow>
 				<s2ui:checkboxRow name='enabled' labelCodeDefault='Enabled'/>
 				<s2ui:checkboxRow name='accountExpired' labelCodeDefault='Account Expired'/>
 				<s2ui:checkboxRow name='accountLocked' labelCodeDefault='Account Locked'/>
