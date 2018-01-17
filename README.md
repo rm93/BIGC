@@ -1,5 +1,4 @@
-# BIGC
-Bioinformatics and Genomics Center
+# Bioinformatics and Genomics Center
 
 Author: Rick Medemblik<br />
 Contact: rmedemblik93@gmail.com<br />
