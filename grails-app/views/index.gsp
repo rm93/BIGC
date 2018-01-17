@@ -14,10 +14,10 @@
         <table border="1">
             <tr>
                 <td><b>Pipeline</b></td>
-                <td><b>Discription</b></td>
+                <td><b>Description</b></td>
             </tr>
             <tr>
-                <td> <g:link controller="amplicon"><asset:image src="icon_myomics.png"/></g:link></td>
+                <td><g:link controller="amplicon"><asset:image src="ampliconIcon.png"/></g:link></td>
                 <td>Our microbial diversity services include taxonomic analysis using our custom data
                 analysis pipeline. The data analysis pipeline consists of two major stages, the
                 denoising and chimera detection stage and the microbial diversity analysis stage.</td>

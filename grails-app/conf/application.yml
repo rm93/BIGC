@@ -68,10 +68,11 @@ grails:
             maxsize: 1000
     controllers:
         upload:
-#            Change upload size from 128 KB to 1000MB to accept the large sequence files.
+#            Change upload size from 128 KB to 2000MB to accept the large sequence files.
+#            Biggest file from Susana her test data is R1+R2 = 1620MB
 #            Convert from MB to bytes: MB * 1024 * 1024 = bytes
-            maxFileSize: 1048576000
-            maxRequestSize: 1048576000
+            maxFileSize: 2097152000
+            maxRequestSize: 2097152000
         defaultScope: singleton
     converters:
         encoding: UTF-8

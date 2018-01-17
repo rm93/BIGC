@@ -50,7 +50,7 @@
 <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'hist')" id="defaultOpen">History</button>
     <button class="tablinks" onclick="openTab(event, 'pipeline')">New project</button>
-    <button class="tablinks" onclick="openTab(event, 'faq')">FAQ</button>
+    <button class="tablinks" onclick="openTab(event, 'manual')">Manual</button>
 </div>
 %{--end--}%
 
@@ -68,11 +68,12 @@
                 <th>End date</th>
                 <th>Status</th>
             </thead>
+
             <g:each var="i" in="${rivm.db.Amplicon_project.getAll()}">
                 <g:if test="${i.privat == true}">
                     <g:if test="${i.userId.toString().equals(sec.loggedInUserInfo(field:"id").toString())}">
                         <tr>
-                            <td><a href="/home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${i.id}/output/">${i.name}</a></td>
+                            <td><a href="file:///home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${i.id}/output">${i.name}</a></td>
                             <td>${rivm.auth.Appuser.findById(i.userId).username}</td>
                             <td>${rivm.db.Partner.findById(rivm.auth.Appuser.findById(i.userId).partnerId).short_name}</td>
                             <td>${i.start_date}</td>
@@ -84,7 +85,7 @@
 
                 <g:else test="${i.privat == false}">
                     <tr>
-                        <td><a href="/home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${i.id}/output/">${i.name}</a></td>
+                        <td><a href="/home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${i.id}/output/" download="data.zip">${i.name}</a></td>
                         <td>${rivm.auth.Appuser.findById(i.userId).username}</td>
                         <td>${rivm.db.Partner.findById(rivm.auth.Appuser.findById(i.userId).partnerId).short_name}</td>
                         <td>${i.start_date}</td>
@@ -117,7 +118,7 @@
                 <td><g:select name="amplicon" from="${rivm.db.Amplicon.getAll()}" value="3" optionKey="id" optionValue="amplicon"></g:select></td>
             </tr>
             <tr>
-                <td>Upload fastq files as zip</td>
+                <td>Upload fastq files as zip (maximum file size 2GB)</td>
                 <td><input type="file" name="fileUpload" accept=".zip"/></td>
             </tr>
         </table>
@@ -126,7 +127,7 @@
 </div>
 
 %{--Third tab with FAQ--}%
-<div id="faq" class="tabcontent">
+<div id="manual" class="tabcontent">
     <h3><strong>${controllerName}</strong></h3>
     <br>
     <div class="body">

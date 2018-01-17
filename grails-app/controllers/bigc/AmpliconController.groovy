@@ -16,17 +16,32 @@ class AmpliconController {
         def fileUpload = params.fileUpload
 
 //        create project
-//        When login works test it
         new Amplicon_project(name: projectName, amplicon: amplicon, privat: Private, user: usr, start_date: new Date(), end_date: new Date(), status: "Running", pipeline_version: new Integer(1)).save(flush: true)
 
-//        Maybe there is a cleaner way to find the newest project ID?
-//        This is not the cleanest way but it works
+//        Create the upload path
+        new File("/home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${rivm.db.Amplicon_project.last().id}/upload/").mkdirs()
 
-//        Create the upload path for the zip file
-        def path = new File("/home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${rivm.db.Amplicon_project.last().id}/upload/").mkdirs()
-//        Transfer the zip file to the create path
+//        Create the output path
+        new File("/home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${rivm.db.Amplicon_project.last().id}/output/").mkdirs()
+
+//        Transfer the zip file to the upload folder
         fileUpload.transferTo(new File("/home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${rivm.db.Amplicon_project.last().id}/upload/data.zip"))
 
+//        pipeline(amplicon)
         redirect action: 'index'
+    }
+
+    def pipeline(amplicon){
+//        Start python script
+
+//          in de zelfde map lukt wel
+//        println("python test.py".execute().text)
+
+//        Dit lukt ook
+//        println("ls -l".execute().text)
+
+//        def amp = rivm.db.Amplicon.findById(amplicon).amplicon
+
+//        amplicon_pipeline.py -i '/home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${rivm.db.Amplicon_project.last().id}/upload/' -o '/home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${rivm.db.Amplicon_project.last().id}/output/' -a 'amp'
     }
 }

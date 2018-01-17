@@ -10,6 +10,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/index',          access: ['ROLE_ADMIN', 'ROLE_USER']],
 	[pattern: '/index.gsp',      access: ['ROLE_ADMIN', 'ROLE_USER']],
 	[pattern: '/amplicon/**',      access: ['ROLE_ADMIN', 'ROLE_USER']],
+	[pattern: '/ampliconController/**',      access: ['ROLE_ADMIN', 'ROLE_USER']],
 	[pattern: '/shutdown',       access: ['permitAll']],
 	[pattern: '/assets/**',      access: ['permitAll']],
 	[pattern: '/**/js/**',       access: ['permitAll']],
