@@ -56,6 +56,7 @@ class AmpliconController {
 //        }else{
 //            project.status = "Error"
 //        }
+        
         project.save(flush: true)
     }
 }

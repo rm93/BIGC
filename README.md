@@ -5,7 +5,7 @@ Contact: rmedemblik93@gmail.com<br />
 
 ### DESCRIPTION
 
-
+Web interface for every user with no prior programming knowledge to start a pipeline and see the results.
 
 ### REQUIREMENTS
 
