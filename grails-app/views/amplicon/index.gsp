@@ -63,7 +63,7 @@
             <thead>
                 <th>Name project</th>
                 <th>User</th>
-                <th>Short Name</th>
+                <th>Department</th>
                 <th>Start date</th>
                 <th>End date</th>
                 <th>Status</th>
@@ -73,7 +73,7 @@
                 <g:if test="${i.privat == true}">
                     <g:if test="${i.userId.toString().equals(sec.loggedInUserInfo(field:"id").toString())}">
                         <tr>
-                            <td><a href="file:///home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${i.id}/output">${i.name}</a></td>
+                            <td><a href="${System.getProperty("user.home")}/Documents/web_interface/pipeline/amplicon_pipeline/${i.id}/output/">${i.name}</a></td>
                             <td>${rivm.auth.Appuser.findById(i.userId).username}</td>
                             <td>${rivm.db.Partner.findById(rivm.auth.Appuser.findById(i.userId).partnerId).short_name}</td>
                             <td>${i.start_date}</td>
@@ -85,7 +85,7 @@
 
                 <g:else test="${i.privat == false}">
                     <tr>
-                        <td><a href="/home/rm93/Documents/Git/BIGC_test_upload/amplicon_pipeline/${i.id}/output/" download="data.zip">${i.name}</a></td>
+                        <td><a href="${System.getProperty("user.home")}/Documents/web_interface/pipeline/amplicon_pipeline/${i.id}/output/">${i.name}</a></td>
                         <td>${rivm.auth.Appuser.findById(i.userId).username}</td>
                         <td>${rivm.db.Partner.findById(rivm.auth.Appuser.findById(i.userId).partnerId).short_name}</td>
                         <td>${i.start_date}</td>
@@ -118,41 +118,40 @@
                 <td><g:select name="amplicon" from="${rivm.db.Amplicon.getAll()}" value="3" optionKey="id" optionValue="amplicon"></g:select></td>
             </tr>
             <tr>
-                <td>Upload fastq files as zip (maximum file size 2GB)</td>
-                <td><input type="file" name="fileUpload" accept=".zip"/></td>
+                <td>Upload fastq files as zip (maximum file size 10GB)</td>
+                <td><input type="file" name="fileUpload" accept=".zip" required/></td>
             </tr>
         </table>
         <g:submitButton name="upload" value="Run pipeline"></g:submitButton>
     </g:form>
 </div>
 
-%{--Third tab with FAQ--}%
+%{--Third tab with manual--}%
 <div id="manual" class="tabcontent">
     <h3><strong>${controllerName}</strong></h3>
     <br>
     <div class="body">
-        <table>
-            <thead>
-                <th>Question</th>
-                <th>Answer</th>
-            </thead>
-            <tr>
-                <td>Name project</td>
-                <td>Answer</td>
-            </tr>
-            <tr>
-                <td>Project private</td>
-                <td>Answer</td>
-            </tr>
-            <tr>
-                <td>Chose amplicon</td>
-                <td>Answer</td>
-            </tr>
-            <tr>
-                <td>Upload</td>
-                <td>Answer</td>
-            </tr>
-        </table>
+        <h1>This is a temporary text. Here comes a manual specifically for this pipeline.</h1><br>
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique sed<br>
+        lacus at lobortis. Duis at tincidunt velit, vel volutpat nibh. Etiam posuere nunc<br>
+        id laoreet rhoncus. Sed molestie placerat sem sollicitudin maximus. Fusce pulvinar<br>
+        ligula odio, sed placerat velit aliquam eget. Aenean id cursus lacus, quis congue<br>
+        arcu. Etiam tincidunt mi vitae orci pretium, in cursus massa condimentum. In eu<br>
+        sem enim. Phasellus sed diam dapibus, interdum diam at, consequat magna.<br>
+        <br>
+        Curabitur id tristique dui, at porttitor ipsum. Sed non risus non quam ornare<br>
+        placerat. Quisque vestibulum nisi sed sem consequat, eget accumsan nunc eleifend.<br>
+        In placerat nunc at diam suscipit ultricies. Sed eget placerat lorem. Vestibulum<br>
+        et pulvinar erat. Nunc gravida dignissim condimentum. Maecenas ut arcu porttitor,<br>
+        rhoncus nibh sit amet, tincidunt turpis. Suspendisse hendrerit porta justo nec<br>
+        ornare. Ut tincidunt mi ac diam dignissim aliquam. Donec quis blandit magna.<br>
+        Vivamus tincidunt dui eget condimentum congue. Suspendisse venenatis mollis<br>
+        vehicula. Mauris turpis justo, volutpat ac pretium vitae, ullamcorper consectetur<br>
+        neque. Sed scelerisque neque sit amet tempor porta.<br>
+        <br>
+
+        <asset:image src="amplicon_pipeline_flow.png" height="800" width="800"/>
     </div>
 </div>
 
