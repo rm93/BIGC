@@ -35,16 +35,13 @@ class AmpliconController {
     def startPipeline(amplicon, Path){
 //        Unzip data.zip file in output folder.
         def getZipData = ["unzip", "-j", Path+"${rivm.db.Amplicon_project.last().id}/upload/data.zip", "-d", Path+"${rivm.db.Amplicon_project.last().id}/upload/"].execute()
-        println(getZipData.err.text)
 
 //        Remove data.zip file in output folder.
         def rmDataZipFile = ["rm", "-f", Path+"${rivm.db.Amplicon_project.last().id}/upload/data.zip"].execute()
-        println(rmDataZipFile.err.text)
 
 //        Start pipeline
         def amp = rivm.db.Amplicon.findById(amplicon).amplicon
         def pipeline = ["amplicon_pipeline.py", "-i", Path+"${rivm.db.Amplicon_project.last().id}/upload/", "-o", Path+"${rivm.db.Amplicon_project.last().id}/output/", "-a", amp, "-n", "results"].execute()
-        println(pipeline.err.text)
 
         updateDateStatus(Path)
     }
