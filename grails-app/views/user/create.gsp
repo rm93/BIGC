@@ -12,7 +12,7 @@
 				<tbody>
 				<s2ui:textFieldRow name='username' labelCodeDefault='Username'/>
 				<s2ui:passwordFieldRow name='password' labelCodeDefault='Password'/>
-				<s2ui:selectRow name="partner" from="${rivm.db.Partner.getAll()}" value="1" optionKey="id" optionValue="short_name" labelCodeDefault="Partner"></s2ui:selectRow>
+				<s2ui:selectRow name="short_name" from="${rivm.db.Partner.getAll()}" optionKey="id" optionValue="short_name" labelCodeDefault="Department"></s2ui:selectRow>
 				<s2ui:checkboxRow name='enabled' labelCodeDefault='Enabled'/>
 				<s2ui:checkboxRow name='accountExpired' labelCodeDefault='Account Expired'/>
 				<s2ui:checkboxRow name='accountLocked' labelCodeDefault='Account Locked'/>

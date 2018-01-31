@@ -67,30 +67,33 @@
                 <th>Start date</th>
                 <th>End date</th>
                 <th>Status</th>
+                <th>Delete</th>
             </thead>
 
             <g:each var="i" in="${rivm.db.Amplicon_project.getAll()}">
                 <g:if test="${i.privat == true}">
                     <g:if test="${i.userId.toString().equals(sec.loggedInUserInfo(field:"id").toString())}">
                         <tr>
-                            <td><a href="${System.getProperty("user.home")}/Documents/web_interface/pipeline/amplicon_pipeline/${i.id}/output/">${i.name}</a></td>
+                            <td><a href="${System.getProperty("user.home")}/Documents/web_interface/pipeline/amplicon_pipeline/${i.id}/output/results/output/">${i.name}</a></td>
                             <td>${rivm.auth.Appuser.findById(i.userId).username}</td>
                             <td>${rivm.db.Partner.findById(rivm.auth.Appuser.findById(i.userId).partnerId).short_name}</td>
                             <td>${i.start_date}</td>
                             <td>${i.end_date}</td>
                             <td>${i.status}</td>
+                            <td><g:link params="${[id: i.id]}" action="deleteRecord"><asset:image src="trash.png" height="23" width="23" title="This will delete all the data and is NOT reversible."/></g:link></td>
                         </tr>
                     </g:if>
                 </g:if>
 
                 <g:else test="${i.privat == false}">
                     <tr>
-                        <td><a href="${System.getProperty("user.home")}/Documents/web_interface/pipeline/amplicon_pipeline/${i.id}/output/">${i.name}</a></td>
+                        <td><a href="${System.getProperty("user.home")}/Documents/web_interface/pipeline/amplicon_pipeline/${i.id}/output/results/output/">${i.name}</a></td>
                         <td>${rivm.auth.Appuser.findById(i.userId).username}</td>
                         <td>${rivm.db.Partner.findById(rivm.auth.Appuser.findById(i.userId).partnerId).short_name}</td>
                         <td>${i.start_date}</td>
                         <td>${i.end_date}</td>
                         <td>${i.status}</td>
+                        <td><g:link params="${[id: i.id]}" action="deleteRecord"><asset:image src="trash.png" height="23" width="23" title="This will delete all the data and is NOT reversible."/></g:link></td>
                     </tr>
                 </g:else>
             </g:each>
