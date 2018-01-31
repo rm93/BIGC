@@ -1,5 +1,6 @@
 # Bioinformatics and Genomics Center
 
+**Licence: GNU General Public License v3.0 (copy provided in directory)**
 Author: Rick Medemblik<br />
 Contact: rmedemblik93@gmail.com<br />
 
