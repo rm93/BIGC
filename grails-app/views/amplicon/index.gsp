@@ -80,7 +80,7 @@
                             <td>${i.start_date}</td>
                             <td>${i.end_date}</td>
                             <td>${i.status}</td>
-                            <td><g:link params="${[id: i.id]}" action="deleteRecord"><asset:image src="trash.png" height="23" width="23" title="This will delete all the data and is NOT reversible."/></g:link></td>
+                            <td><g:link params="${[id: i.id]}" action="deleteRecord"><asset:image src="trash.png" height="23" width="23" title="This action removes all data and can not be reversed!"/></g:link></td>
                         </tr>
                     </g:if>
                 </g:if>
@@ -93,11 +93,15 @@
                         <td>${i.start_date}</td>
                         <td>${i.end_date}</td>
                         <td>${i.status}</td>
-                        <td><g:link params="${[id: i.id]}" action="deleteRecord"><asset:image src="trash.png" height="23" width="23" title="This will delete all the data and is NOT reversible."/></g:link></td>
+                        <td><g:link params="${[id: i.id]}" action="deleteRecord"><asset:image src="trash.png" height="23" width="23" title="This action removes all data and can not be reversed!"/></g:link></td>
                     </tr>
                 </g:else>
             </g:each>
         </table>
+
+        <g:if test="${flash.message}">
+            <div class="message" style="display: block"><b>${flash.message}</b></div>
+        </g:if>
     </div>
 </div>
 

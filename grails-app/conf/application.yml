@@ -108,6 +108,7 @@ environments:
     development:
         dataSource:
             dbCreate: update
+#            Change testdb8 to the name of the newly created database.
             url: jdbc:postgresql://localhost:5432/testdb8
     test:
         dataSource:

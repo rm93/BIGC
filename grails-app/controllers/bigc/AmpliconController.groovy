@@ -71,11 +71,16 @@ class AmpliconController {
 //        Set path variable
         String Path = System.getProperty("user.home")+"/Documents/web_interface/pipeline/amplicon_pipeline/"
 
+        if (Amplicon_project.get(params.id).status == "Error" || Amplicon_project.get(params.id).status == "Complete"){
 //        Delete selected project from the database
-        Amplicon_project.get(params.id).delete(flush: true)
+            Amplicon_project.get(params.id).delete(flush: true)
 
 //        Delete selected project data
-        ["rm", "-rf", Path+params.id+"/"].execute()
+            ["rm", "-rf", Path+params.id+"/"].execute()
+        }else {
+//            Here needs a popup
+            flash.message = "This project can not be deleted because the data is still being used."
+        }
 
         redirect action: 'index'
     }
