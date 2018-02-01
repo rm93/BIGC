@@ -60,14 +60,14 @@ Make a database with:<br />
 - Find the line `controllers: upload` in the document.
 - Change the upload size.
 
-### Change path parameter
+#### Change path parameter
 
 - Open the project with a IDE of your choice.
 - Open the file AmpliconController wich can be found at BIGC/grails-app/controllers/bigc/.
 - Change the `path` parameter at the top of the `upload` function to the location were the project data would be stored.
 - Change the `path` parameter at the top of the `deleteRecord` function to the location were the project data is stored (this is the same path as above).
 
-### Add the first amplicon
+#### Add the first amplicon
 
 - Open the commandline interface
 - Login by PostgreSQL with:<br />
@@ -77,7 +77,7 @@ Make a database with:<br />
 - Add the following command:
 `INSERT INTO amplicon (id, version, amplicon) VALUES (1, 0, '16sv4');`
 
-### Add the first department
+#### Add the first department
 
 - Open the commandline interface
 - Login by PostgreSQL with:<br />
