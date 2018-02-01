@@ -4,6 +4,7 @@ import rivm.auth.Appuser
 
 class Partner implements Serializable{
 
+//    Create database table to store partner/department data.
     String name
     String short_name
     String country

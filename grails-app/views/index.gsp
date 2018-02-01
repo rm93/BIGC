@@ -11,6 +11,7 @@
     <section class="row colset-2-its">
         <h1>Welcome <sec:username /></h1>
         <p>
+        %{--Table to add every pipeline available on the web interface--}%
         <table border="1">
             <tr>
                 <td><b>Pipeline</b></td>

@@ -10,7 +10,7 @@ buildscript {
     }
 }
 
-version "0.1"
+version "1.0"
 group "bigc"
 
 apply plugin:"eclipse"
@@ -26,9 +26,11 @@ repositories {
 }
 
 dependencies {
+//    Extra plugins to run the web interface
     compile 'org.grails.plugins:spring-security-core:3.2.0'
     compile 'org.grails.plugins:spring-security-ui:3.1.1'
     compile 'org.postgresql:postgresql:42.1.4.jre7'
+//    End extra plugins
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"

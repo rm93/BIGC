@@ -6,6 +6,7 @@ import rivm.db.Partner
 
 class BootStrap {
 
+//    Create admin user by the first startup.
     def init = { servletContext ->
         if(Appuser.count() == 0) {
             def adminRole = new Role(authority: "ROLE_ADMIN").save(flush: true)
@@ -14,13 +15,6 @@ class BootStrap {
                 AppuserRole.create(user, adminRole, true)
             }
         }
-
-//        create new test amplicon
-//        new Amplicon(amplicon: "16sv4").save(flush: true)
-
-//        create new test partners
-//        new Partner(name: "National Institute for Public Health and the Environment", short_name: "RIVM", country: "The Netherlands").save(flush: true)
-
     }
     def destroy = {
     }

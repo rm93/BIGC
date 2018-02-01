@@ -4,6 +4,7 @@ import rivm.auth.Appuser
 
 class Amplicon_project {
 
+//    Create database table to store project data.
     String name
     Boolean privat
     Date start_date

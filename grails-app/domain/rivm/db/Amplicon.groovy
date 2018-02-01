@@ -2,6 +2,7 @@ package rivm.db
 
 class Amplicon {
 
+//    Create database table to store available amplicons.
     String amplicon
 
 //    Set relation with amplicon_project

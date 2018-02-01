@@ -4,6 +4,7 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'rivm.auth.Appu
 grails.plugin.springsecurity.authority.className = 'rivm.auth.Role'
 //allows logout to work
 grails.plugin.springsecurity.logout.postOnly = false
+//Set permissions to roles.
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['ROLE_ADMIN', 'ROLE_USER']],
 	[pattern: '/error',          access: ['permitAll']],

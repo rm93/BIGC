@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Gradle : bigc : BIGC-0.1.war (exploded)">
-    <output-path>$PROJECT_DIR$/build/libs/exploded/BIGC-0.1.war</output-path>
+  <artifact type="exploded-war" name="Gradle : bigc : BIGC-1.0.war (exploded)">
+    <output-path>$PROJECT_DIR$/build/libs/exploded/BIGC-1.0.war</output-path>
     <properties id="gradle-properties">
       <options external-project-path="$PROJECT_DIR$">
         <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
@@ -8,9 +8,9 @@
     </properties>
     <root id="root">
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/BIGC-0.1.war/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/BIGC-1.0.war/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="BIGC_main/web/Web Gradle : BIGC-0.1.war" />
+      <element id="javaee-facet-resources" facet="BIGC_main/web/Web Gradle : BIGC-1.0.war" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="BIGC_main" />
@@ -46,8 +46,8 @@
           <element id="library" level="project" name="Gradle: org.glassfish.web:el-impl:2.1.2-b03" />
           <element id="library" level="project" name="Gradle: com.h2database:h2:1.4.196" />
           <element id="library" level="project" name="Gradle: ch.qos.logback:logback-classic:1.1.11" />
-          <element id="library" level="project" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.25" />
           <element id="library" level="project" name="Gradle: org.apache.tomcat:tomcat-jdbc:8.5.20" />
+          <element id="library" level="project" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.25" />
           <element id="library" level="project" name="Gradle: org.slf4j:jul-to-slf4j:1.7.25" />
           <element id="library" level="project" name="Gradle: com.bertramlabs.plugins:asset-pipeline-grails:2.14.2" />
           <element id="library" level="project" name="Gradle: org.slf4j:log4j-over-slf4j:1.7.25" />
@@ -101,12 +101,12 @@
           <element id="library" level="project" name="Gradle: ch.qos.logback:logback-core:1.1.11" />
           <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-aop:4.3.9.RELEASE" />
-          <element id="library" level="project" name="Gradle: javax.el:el-api:2.1.2-b03" />
           <element id="library" level="project" name="Gradle: org.codehaus.groovy:groovy-xml:2.4.11" />
-          <element id="library" level="project" name="Gradle: org.codehaus.groovy:groovy-templates:2.4.11" />
+          <element id="library" level="project" name="Gradle: javax.el:el-api:2.1.2-b03" />
           <element id="library" level="project" name="Gradle: org.apache.tomcat:tomcat-juli:8.5.20" />
-          <element id="library" level="project" name="Gradle: org.yaml:snakeyaml:1.17" />
+          <element id="library" level="project" name="Gradle: org.codehaus.groovy:groovy-templates:2.4.11" />
           <element id="library" level="project" name="Gradle: com.bertramlabs.plugins:asset-pipeline-core:2.14.2" />
+          <element id="library" level="project" name="Gradle: org.yaml:snakeyaml:1.17" />
           <element id="library" level="project" name="Gradle: javax.transaction:jta:1.1" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.10" />
           <element id="library" level="project" name="Gradle: org.grails:grails-databinding:3.3.1" />

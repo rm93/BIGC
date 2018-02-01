@@ -52,13 +52,17 @@
     <button class="tablinks" onclick="openTab(event, 'pipeline')">New project</button>
     <button class="tablinks" onclick="openTab(event, 'manual')">Manual</button>
 </div>
-%{--end--}%
 
 %{--First tab with the pipeline history table--}%
 <div id="hist" class="tabcontent">
     <h3><strong>${controllerName}</strong></h3>
     <br>
     <div class="body">
+        %{--Show error message if a project with status "running" is deleted--}%
+        <g:if test="${flash.message}">
+            <div class="message" style="display: block"><b>${flash.message}</b></div>
+        </g:if>
+
         <table>
             <thead>
                 <th>Name project</th>
@@ -98,10 +102,6 @@
                 </g:else>
             </g:each>
         </table>
-
-        <g:if test="${flash.message}">
-            <div class="message" style="display: block"><b>${flash.message}</b></div>
-        </g:if>
     </div>
 </div>
 
@@ -110,6 +110,7 @@
     %{--Name of controller--}%
     <h3><strong>${controllerName}</strong></h3>
     <br>
+    %{--Form with the necessary input fields to run the pipeline--}%
     <g:form action="upload" method="post" useToken="true" enctype="multipart/form-data">
         <table>
             <tr>
@@ -129,6 +130,7 @@
                 <td><input type="file" name="fileUpload" accept=".zip" required/></td>
             </tr>
         </table>
+        %{--Button that gives the input data to the amplicon_controller--}%
         <g:submitButton name="upload" value="Run pipeline"></g:submitButton>
     </g:form>
 </div>
