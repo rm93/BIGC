@@ -97,7 +97,7 @@
                         <td>${i.start_date}</td>
                         <td>${i.end_date}</td>
                         <td>${i.status}</td>
-                        <td><g:link params="${[id: i.id]}" action="deleteRecord"><asset:image src="trash.png" height="23" width="23" title="This action removes all data and can not be reversed!"/></g:link></td>
+                        <td><g:link params="${[idp: i.id, idu: i.userId]}" action="deleteRecord"><asset:image src="trash.png" height="23" width="23" title="This action removes all data and can not be reversed!"/></g:link></td>
                     </tr>
                 </g:else>
             </g:each>

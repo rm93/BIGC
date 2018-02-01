@@ -1,0 +1,191 @@
+Linux version
+
+Using ReadLine
+
+Running 64Bit Version
+
+mothur v.1.39.5
+Last updated: 3/20/2017
+
+by
+Patrick D. Schloss
+
+Department of Microbiology & Immunology
+University of Michigan
+http://www.mothur.org
+
+When using, please cite:
+Schloss, P.D., et al., Introducing mothur: Open-source, platform-independent, community-supported software for describing and comparing microbial communities. Appl Environ Microbiol, 2009. 75(23):7537-41.
+
+Distributed under the GNU General Public License
+
+Type 'help()' for information on the commands that are available
+
+For questions and analysis support, please visit our forum at https://www.mothur.org/forum
+
+Type 'quit()' to exit program
+Batch Mode
+
+
+mothur > set.current(processors=8)
+
+Using 8 processors.
+
+Current files saved by mothur:
+processors=8
+
+Output File Names: 
+current_files.summary
+
+
+mothur > set.dir(input=/home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp)
+Mothur's directories:
+inputDir=/home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/
+
+mothur > set.dir(output=/home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp)
+Mothur's directories:
+outputDir=/home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/
+
+mothur > set.dir(tempdefault=/home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp)
+Mothur's directories:
+tempDefault=/home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/
+
+mothur > make.contigs(file=results.samplesheet)
+Unable to open results.samplesheet. Trying default /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.samplesheet
+
+Using 8 processors.
+Unable to open 328_001_S1_L001_R1_001.fastq. Trying default /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.fastq
+Unable to open 328_001_S1_L001_R2_001.fastq. Trying default /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R2_001.fastq
+
+>>>>>	Processing file pair /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.fastq - /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R2_001.fastq (files 1 of 1)	<<<<<
+Making contigs...
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.contigs.report
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.contigs.report
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.contigs.report
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.contigs.report
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.contigs.report
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.contigs.report
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.trim.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.scrap.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.contigs.report
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/328_001_S1_L001_R1_001.contigs.groups
+Done.
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.contigs.groups
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.contigs.groups
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.contigs.report
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.scrap.contigs.fasta
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.qual
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.scrap.contigs.qual
+
+It took 27 secs to assemble 77626 reads.
+
+It took 27 secs to process 77626 sequences.
+
+Group count: 
+328_001_S1_L001	77626
+
+Total of all groups is 77626
+
+Output File Names: 
+/home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta
+/home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.qual
+/home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.contigs.report
+/home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.scrap.contigs.fasta
+/home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.scrap.contigs.qual
+/home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.contigs.groups
+
+[WARNING]: your sequence names contained ':'.  I changed them to '_' to avoid problems in your downstream analysis.
+
+mothur > summary.seqs(fasta=current)
+Using /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta as input file for the fasta parameter.
+Unable to open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta. Trying default /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta
+Unable to open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta. Trying mothur's location /home/rm93/Documents/project_rivm/RIVM_amplicon_pipeline/mothurresults.trim.contigs.fasta
+Unable to open /home/rm93/Documents/project_rivm/RIVM_amplicon_pipeline/mothurresults.trim.contigs.fasta
+
+Using 8 processors.
+[ERROR]: did not complete summary.seqs.
+
+mothur > screen.seqs(fasta=current, group=current, maxambig=0, minlength=200, maxlength=470)
+Using /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta as input file for the fasta parameter.
+Using /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.contigs.groups as input file for the group parameter.
+Unable to open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta. Trying default /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta
+Unable to open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta. Trying mothur's location /home/rm93/Documents/project_rivm/RIVM_amplicon_pipeline/mothurresults.trim.contigs.fasta
+Unable to open /home/rm93/Documents/project_rivm/RIVM_amplicon_pipeline/mothurresults.trim.contigs.fasta
+Unable to open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.contigs.groups. Trying default /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.contigs.groups
+Unable to open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.contigs.groups. Trying mothur's location /home/rm93/Documents/project_rivm/RIVM_amplicon_pipeline/mothurresults.contigs.groups
+Unable to open /home/rm93/Documents/project_rivm/RIVM_amplicon_pipeline/mothurresults.contigs.groups
+
+Using 8 processors.
+[ERROR]: did not complete screen.seqs.
+
+mothur > unique.seqs(fasta=current)
+Using /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta as input file for the fasta parameter.
+Unable to open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta. Trying default /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta
+Unable to open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta. Trying mothur's location /home/rm93/Documents/project_rivm/RIVM_amplicon_pipeline/mothurresults.trim.contigs.fasta
+Unable to open /home/rm93/Documents/project_rivm/RIVM_amplicon_pipeline/mothurresults.trim.contigs.fasta
+[ERROR]: did not complete unique.seqs.
+
+mothur > count.seqs(name=current, group=current)
+Using /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.contigs.groups as input file for the group parameter.
+[WARNING]: no file was saved for name parameter.
+Unable to open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.contigs.groups. Trying default /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.contigs.groups
+Unable to open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.contigs.groups. Trying mothur's location /home/rm93/Documents/project_rivm/RIVM_amplicon_pipeline/mothurresults.contigs.groups
+Unable to open /home/rm93/Documents/project_rivm/RIVM_amplicon_pipeline/mothurresults.contigs.groups
+You have no current namefile or sharedfile and the name or shared parameter is required.
+
+Using 8 processors.
+[ERROR]: did not complete count.seqs.
+
+mothur > summary.seqs(count=current)
+[WARNING]: no file was saved for count parameter.
+Using /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta as input file for the fasta parameter.
+
+Using 8 processors.
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.summary
+[ERROR]: Could not open /home/rm93/Documents/web_interface/pipeline/amplicon_pipeline/214/output//results/temp/results.trim.contigs.fasta
+Error in reading your fastafile, at position -1. Blank name.
+
+
+************************************************************
+************************************************************
+************************************************************
+Detected 49 [ERROR] messages, please review.
+************************************************************
+************************************************************
+************************************************************
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<^>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<^>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<^>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Detected 3 [WARNING] messages, please review.
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<^>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<^>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<^>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

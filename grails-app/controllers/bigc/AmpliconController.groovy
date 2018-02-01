@@ -48,6 +48,7 @@ class AmpliconController {
 //        Start pipeline
         def amp = rivm.db.Amplicon.findById(amplicon).amplicon
         def pipeline = ["amplicon_pipeline.py", "-i", Path+"${rivm.db.Amplicon_project.last().id}/upload/", "-o", Path+"${rivm.db.Amplicon_project.last().id}/output/", "-a", amp, "-n", "results"].execute()
+        println(pipeline.err.text)
 
 //        Start the "updateDateStatus" function
         updateDateStatus(Path)
@@ -79,16 +80,21 @@ class AmpliconController {
 //        Set path variable
         String Path = System.getProperty("user.home")+"/Documents/web_interface/pipeline/amplicon_pipeline/"
 
-//        If the project status is "Error" or "Complete" delete the project else show message.
-        if (Amplicon_project.get(params.id).status == "Error" || Amplicon_project.get(params.id).status == "Complete"){
-//        Delete selected project from the database
-            Amplicon_project.get(params.id).delete(flush: true)
+        if (Amplicon_project.get(params.idp).userId.toString().equals((params.idu).toString() == true)){
+//            If the project status is "Error" or "Complete" delete the project else show message.
+            if (Amplicon_project.get(params.idp).status == "Error" || Amplicon_project.get(params.idp).status == "Complete"){
+//                Delete selected project from the database
+                Amplicon_project.get(params.idp).delete(flush: true)
 
-//        Delete selected project data
-            ["rm", "-rf", Path+params.id+"/"].execute()
-        }else {
-//            Here needs a popup
-            flash.message = """Project "${Amplicon_project.get(params.id).name}" can not be deleted because it is still in use."""
+//                Delete selected project data
+                ["rm", "-rf", Path+params.idp+"/"].execute()
+            }else {
+//                Error message
+                flash.message = """Project "${Amplicon_project.get(params.idp).name}" can not be deleted because it is still in use."""
+            }
+        }else{
+//             Error message
+            flash.message = """Project "${Amplicon_project.get(params.idp).name}" can not be deleted because it is not your project."""
         }
 
 //        Redirect to the history page

@@ -1,0 +1,6 @@
+2018-02-01 15:21:49,654 	INFO: 	Parsing command line arguments...
+2018-02-01 15:21:49,658 	INFO: 	Project name: results
+2018-02-01 15:21:49,663 	INFO: 	Validating input data...
+2018-02-01 15:21:49,664 	INFO: 	Selected amplicon: 16sv4
+2018-02-01 15:21:49,926 	INFO: 	No samplesheet found, script will generate samplesheet
+2018-02-01 15:21:49,931 	CRITICAL: 	No valid filepairs found. Terminating script

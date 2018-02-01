@@ -13,7 +13,7 @@ class Partner implements Serializable{
     static hasMany = [user: Appuser]
 
     static constraints = {
-        name nullable: false, blank: false, unique: true
+        name nullable: false, blank: false
         short_name nullable: false, blank: false, unique: true
         country nullable: false, blank: false
     }

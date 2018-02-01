@@ -44,7 +44,7 @@ Login by PostgreSQL with:<br />
 `sudo -u postgres psql`<br />
 
 Make a database with:<br />
-`postgres=# CREATE DATABASE dbname;`<br />
+`postgres=# CREATE DATABASE <dbname>;`<br />
 
 #### Change parameter
 
@@ -59,6 +59,33 @@ Make a database with:<br />
 - Open the file application.yml wich can be found at BIGC/grails-app/conf/.
 - Find the line `controllers: upload` in the document.
 - Change the upload size.
+
+### Change path parameter
+
+- Open the project with a IDE of your choice.
+- Open the file AmpliconController wich can be found at BIGC/grails-app/controllers/bigc/.
+- Change the `path` parameter at the top of the `upload` function to the location were the project data would be stored.
+- Change the `path` parameter at the top of the `deleteRecord` function to the location were the project data is stored (this is the same path as above).
+
+### Add the first amplicon
+
+- Open the commandline interface
+- Login by PostgreSQL with:<br />
+`sudo -u postgres psql`
+- Go to the newly created database with:<br />
+`\c <dbname>`
+- Add the following command:
+`INSERT INTO amplicon (id, version, amplicon) VALUES (1, 0, '16sv4');`
+
+### Add the first department
+
+- Open the commandline interface
+- Login by PostgreSQL with:<br />
+`sudo -u postgres psql`
+- Go to the newly created database with:<br />
+`\c <dbname>`
+- Add the following command:
+`INSERT INTO partner (id, version, short_name, name, country) VALUES (1, 0, 'IIV', 'National Institute for Public Health and the Environment', 'The Netherlands');`
 
 ### USAGE
 
