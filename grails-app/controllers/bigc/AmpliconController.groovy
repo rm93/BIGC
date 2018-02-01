@@ -9,15 +9,15 @@ class AmpliconController {
     }
 
     def upload(){
+//        Set default path to store the data
+        String Path = System.getProperty("user.home")+"/Documents/web_interface/pipeline/amplicon_pipeline/"
+
 //        Get the data from the upload form
         def projectName = params.projectName
         def Private = params.pri
         def usr = springSecurityService.getCurrentUserId()
         def amplicon = params.amplicon
         def fileUpload = params.fileUpload
-
-//        Set default path to store the data
-        String Path = System.getProperty("user.home")+"/Documents/web_interface/pipeline/amplicon_pipeline/"
 
 //        create project
         new Amplicon_project(name: projectName, amplicon: amplicon, privat: Private, user: usr, start_date: new Date(), end_date: new Date(), status: "Running", pipeline_version: new Integer(1)).save(flush: true)
