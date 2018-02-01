@@ -88,7 +88,7 @@ class AmpliconController {
             ["rm", "-rf", Path+params.id+"/"].execute()
         }else {
 //            Here needs a popup
-            flash.message = "This project can not be deleted because the data is still being used."
+            flash.message = """Project "${Amplicon_project.get(params.id).name}" can not be deleted because it is still in use."""
         }
 
 //        Redirect to the history page
