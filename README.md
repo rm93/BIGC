@@ -16,11 +16,14 @@ Web interface for every user with no prior programming knowledge to start a pipe
 - PostgreSQL 9.5.10
 - Java 8
 - IDE for Grails
+- Pipelines supported on the web interface.<br />
+**At the moment only the [amplicon](https://github.com/Tommyvanwijk/RIVM_amplicon_pipeline) pipeline is supported.**
 
 ### INSTALLATION
 
 - Clone the BIGC repository to the desired location on your system.<br />
   `https://github.com/rm93/BIGC.git`
+- Install the suported pipelines with the instructions given on there github page.
   
 #### Grails
 The easiest way to install Grails version 3.3.1 is with [SDKMAN!](http://www.sdkman.io)<br />
