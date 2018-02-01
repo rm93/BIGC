@@ -40,10 +40,9 @@ To install PostgreSQL follow the below commands.
 
 #### Create database
 
-Login by PostgreSQL with:<br />
+- Login by PostgreSQL with:<br />
 `sudo -u postgres psql`<br />
-
-Make a database with:<br />
+- Make a database with:<br />
 `postgres=# CREATE DATABASE <dbname>;`<br />
 
 #### Change parameter
